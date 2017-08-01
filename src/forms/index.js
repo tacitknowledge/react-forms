@@ -6,7 +6,7 @@ import FormReducer from './formReducer';
 import * as FormConstants from './formConstants';
 import * as FormActions from './formActions';
 
-export {
+const salamaleicu = {
   Form,
   FormGroup,
   FormGroupAsync,
@@ -15,3 +15,5 @@ export {
   FormActions,
   FormConstants
 };
+
+export default salamaleicu;
