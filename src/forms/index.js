@@ -5,7 +5,7 @@ import FormError from './formError';
 import FormReducer from './formReducer';
 import * as FormActions from './formActions';
 
-const forms = {
+const forms={
   Form,
   FormGroup,
   FormGroupAsync,
