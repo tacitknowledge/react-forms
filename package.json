@@ -23,7 +23,8 @@
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",
     "babelify": "^7.3.0",
-    "browserify-global-shim": "^1.0.3"
+    "browserify-global-shim": "^1.0.3",
+    "prop-types": "^15.5.0"
   },
   "dependencies": {
     "validate.js": "0.11.1"
@@ -39,6 +40,7 @@
     "payment": "Payment",
     "moment": "moment",
     "redux": "redux",
-    "react-redux": "ReactRedux"
+    "react-redux": "ReactRedux",
+    "lodash": "lodash"
   }
 }
