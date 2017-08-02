@@ -25,6 +25,9 @@
     "babelify": "^7.3.0",
     "browserify-global-shim": "^1.0.3"
   },
+  "dependencies": {
+    "validate.js": "0.11.1"
+  },
   "browserify": {
     "transform": [
       "browserify-global-shim"
@@ -35,7 +38,6 @@
     "react-dom": "ReactDOM",
     "payment": "Payment",
     "lodash": "lodash",
-    "validate.js": "validate",
     "moment": "moment",
     "redux": "redux",
     "react-redux": "ReactRedux"
