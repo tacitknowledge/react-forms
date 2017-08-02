@@ -4,6 +4,7 @@ import FormGroupAsync from './formGroupAsync';
 import FormError from './formError';
 import FormReducer from './formReducer';
 import * as FormActions from './formActions';
+import * as FormConstants from './formConstants';
 
 const forms={
   Form,
@@ -11,7 +12,8 @@ const forms={
   FormGroupAsync,
   FormError,
   FormReducer,
-  FormActions
+  FormActions,
+  FormConstants
 };
 
 export default forms;
