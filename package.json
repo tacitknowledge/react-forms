@@ -37,7 +37,6 @@
     "react": "React",
     "react-dom": "ReactDOM",
     "payment": "Payment",
-    "lodash": "lodash",
     "moment": "moment",
     "redux": "redux",
     "react-redux": "ReactRedux"
