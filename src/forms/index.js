@@ -6,7 +6,7 @@ import FormReducer from './formReducer';
 import * as FormConstants from './formConstants';
 import * as FormActions from './formActions';
 
-const forms = {
+export {
   Form,
   FormGroup,
   FormGroupAsync,
@@ -15,5 +15,3 @@ const forms = {
   FormActions,
   FormConstants
 };
-
-export default forms;

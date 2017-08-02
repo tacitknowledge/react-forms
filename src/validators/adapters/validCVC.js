@@ -1,4 +1,5 @@
 import validate from 'validate.js';
+import Payment from 'payment';
 import { isEmpty } from 'lodash';
 
 validate.validators.validCVC = (value, options, attribute, attributes) => {
@@ -6,6 +7,6 @@ validate.validators.validCVC = (value, options, attribute, attributes) => {
     return undefined;
   }
 
-  return true
+  return Payment.fns.validateCardCVC(value, attributes.cardType)
     ? undefined : options.message;
 };

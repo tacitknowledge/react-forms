@@ -1,4 +1,5 @@
 import validate from 'validate.js';
+import Payment from 'payment';
 import { isEmpty } from 'lodash';
 
 validate.validators.validCard = (value, options) => {
@@ -6,6 +7,6 @@ validate.validators.validCard = (value, options) => {
     return undefined;
   }
 
-  return true
+  return Payment.fns.validateCardNumber(value)
     ? undefined : options.message;
 };

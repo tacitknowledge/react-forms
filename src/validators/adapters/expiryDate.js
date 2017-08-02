@@ -1,4 +1,5 @@
 import validate from 'validate.js';
+import Payment from 'payment';
 import { isEmpty } from 'lodash';
 
 validate.validators.expiryDate = (value, options, attribute, attributes) => {
@@ -19,7 +20,7 @@ validate.validators.expiryDate = (value, options, attribute, attributes) => {
     && isTwoDigitsMonth;
 
   if (hasExpiryFilled) {
-    const isValid = true;
+    const isValid = Payment.fns.validateCardExpiry(expiryMonth, expiryYear);
     return isValid ? undefined : options.message;
   }
 
