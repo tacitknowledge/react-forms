@@ -34,6 +34,10 @@
     "react": "React",
     "react-dom": "ReactDOM",
     "payment": "Payment",
-    "lodash": "lodash"
+    "lodash": "lodash",
+    "validate.js": "validate",
+    "moment": "moment",
+    "redux": "redux",
+    "react-redux": "ReactRedux"
   }
 }
