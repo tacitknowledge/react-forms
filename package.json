@@ -4,7 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "./node_modules/karma/bin/karma start karma.conf.js"
+    "lint": "./node_modules/eslint/bin/eslint.js src/main/forms/.; exit 0",
+    "pretest": "npm run lint",
+    "test": "./node_modules/karma/bin/karma start karma.conf.js",
+    "build": "./node_modules/browserify/bin/cmd.js  src/main/forms/index.js -o bundle.js -t [ babelify --presets [ es2015 react ] ]"
   },
   "repository": {
     "type": "git",
@@ -27,6 +30,10 @@
     "browserify": "^14.4.0",
     "browserify-global-shim": "^1.0.3",
     "enzyme": "^2.9.1",
+    "eslint": "^2.5.3",
+    "eslint-config-airbnb": "^6.2.0",
+    "eslint-plugin-react": "^4.2.3",
+    "eslint-watch": "^2.1.10",
     "jasmine-core": "^2.7.0",
     "karma": "^1.7.0",
     "karma-babel-preprocessor": "^6.0.1",
@@ -35,6 +42,8 @@
     "karma-jasmine": "^1.1.0",
     "karma-jasmine-matchers": "^2.0.2",
     "karma-requirejs": "^1.1.0",
+    "react-test-renderer": "^15.6.1",
+    "watchify": "^3.9.0",
     "lodash": "^4.17.4",
     "moment": "^2.18.1",
     "payment": "^2.2.1",
@@ -46,7 +55,8 @@
     "react-test-renderer": "^15.6.1",
     "redux": "^3.7.2",
     "redux-thunk": "^2.2.0",
-    "watchify": "^3.9.0"
+    "moment": "^2.18.1",
+    "payment": "^2.2.1"
   },
   "dependencies": {
     "validate.js": "0.11.1"
@@ -59,6 +69,7 @@
   "browserify-global-shim": {
     "react": "React",
     "react-dom": "ReactDOM",
+    "prop-types": "PropTypes",
     "payment": "Payment",
     "moment": "moment",
     "redux": "redux",

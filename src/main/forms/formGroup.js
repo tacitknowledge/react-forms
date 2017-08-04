@@ -178,6 +178,7 @@ export class FormGroup extends Component {
   }
 }
 
+FormGroup.displayName = 'FormGroup';
 FormGroup.defaultProps = {
   className: '',
   invalidateEvent: 'onBlur',
