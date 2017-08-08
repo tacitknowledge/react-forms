@@ -6,8 +6,9 @@ import FormReducer from './formReducer';
 import * as FormActions from './formActions';
 import * as FormConstants from './formConstants';
 import validateExpiryYear from '../validators/adapters/expiryYear';
+};
 
-const forms = {
+export {
   Form,
   FormGroup,
   FormGroupAsync,
@@ -17,6 +18,3 @@ const forms = {
   FormConstants,
   validateExpiryYear
 };
-
-export default forms;
-window.forms = forms;
