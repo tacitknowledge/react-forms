@@ -7,7 +7,7 @@ import * as FormActions from './formActions';
 import * as FormConstants from './formConstants';
 import validateExpiryYear from '../validators/adapters/expiryYear';
 
-export {
+module.exports = {
   Form,
   FormGroup,
   FormGroupAsync,
