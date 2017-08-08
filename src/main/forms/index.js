@@ -6,7 +6,6 @@ import FormReducer from './formReducer';
 import * as FormActions from './formActions';
 import * as FormConstants from './formConstants';
 import validateExpiryYear from '../validators/adapters/expiryYear';
-};
 
 export {
   Form,
