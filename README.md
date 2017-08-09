@@ -3,9 +3,14 @@
 ## Running tests
 Before running tests, please comment out the following lines from the `webpack.config.js` file
 
-'react': 'var React',
-'react/addons': 'var React',
-'react-redux': 'var ReactRedux',
-'payment': 'Payment',
-'lodash': 'lodash',
-'moment': 'moment',
+```js
+  //Comment before running tests
+   'react': 'var React',
+   'react/addons': 'var React',
+   'react-redux': 'var ReactRedux',
+   'payment': 'Payment',
+   'lodash': 'lodash',
+   'moment': 'moment',
+   ///////////////////////////////////
+
+```
