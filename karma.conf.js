@@ -1,90 +1,44 @@
-// Karma configuration
-// Generated on Fri Aug 04 2017 10:08:04 GMT+0300 (EEST)
-
 module.exports = function(config) {
   config.set({
+    basePath: '.',
 
-    // base path that will be used to resolve all patterns (eg. files, exclude)
-    basePath: '',
+    frameworks: ['jasmine', 'jasmine-matchers'],
+    browsers: ['PhantomJS'],
 
-
-    // frameworks to use
-    // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
-    frameworks: ['jasmine', 'browserify', 'jasmine-matchers'],
-
-
-    // list of files / patterns to load in the browser
     files: [
-        'src/test/**/*.js'
+      // shim to workaroud PhantomJS 1.x lack of `bind` support
+      // see: https://github.com/ariya/phantomjs/issues/10522
+      'node_modules/es5-shim/es5-shim.js',
+
+      // React is an external dependency of the component
+      'node_modules/react/dist/react-with-addons.js',
+
+      'spec/spec-helper.js',
+      'spec/**/*.spec.*',
+      { pattern: 'lib/**/*', watched: true, included: false }
     ],
 
-    plugins: [
-      'karma-jasmine',
-      'karma-jasmine-matchers',
-      'karma-browserify',
-      'karma-chrome-launcher'
-    ],
-
-    // list of files to exclude
-    exclude: [
-    ],
-
-
-    // preprocess matching files before serving them to the browser
-    // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
-            'src/**/*.js': ['browserify']
-        },
-
-    browserify: {
-      debug: true,
-      transform: [
-        ['babelify', { presets: ["es2015"] }],
-      ],
-      configure(bundle) {
-        bundle.on('prebundle', () => {
-          bundle.external('react/addons');
-          bundle.external('react/lib/ReactContext');
-          bundle.external('react/lib/ExecutionEnvironment');
-        });
-      },
+      // add webpack as preprocessor
+      'spec/**/*.spec.*': ['webpack', 'sourcemap']
     },
 
+    webpack: loadWebpackConfig(),
 
-    // test results reporter to use
-    // possible values: 'dots', 'progress'
-    // available reporters: https://npmjs.org/browse/keyword/karma-reporter
-    reporters: ['progress'],
+    webpackServer: {
+      noInfo: true
+    },
 
-
-    // web server port
-    port: 9876,
-
-
-    // enable / disable colors in the output (reporters and logs)
-    colors: true,
+    singleRun: true
+  });
+};
 
 
-    // level of logging
-    // possible values: config.LOG_DISABLE || config.LOG_ERROR || config.LOG_WARN || config.LOG_INFO || config.LOG_DEBUG
-    logLevel: config.LOG_INFO,
-
-
-    // enable / disable watching file and executing tests whenever any file changes
-    autoWatch: true,
-
-
-    // start these browsers
-    // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-    browsers: ['Chrome'],
-
-
-    // Continuous Integration mode
-    // if true, Karma captures browsers, runs the tests and exits
-    singleRun: false,
-
-    // Concurrency level
-    // how many browser should be started simultaneous
-    concurrency: Infinity
-  })
+/**
+  Loads configuration while ensuring sounce-map is enabled
+ */
+function loadWebpackConfig () {
+  var webpackConfig = require('./webpack.config.js');
+  webpackConfig.devtool = 'inline-source-map';
+  return webpackConfig;
 }

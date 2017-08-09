@@ -1,13 +1,15 @@
 # react-forms
 
 ## Running tests
-Before running tests, please comment out the following lines from the `package.json` file
+Before running tests, please comment out the following lines from the `webpack.config.js` file
 
-```js
-  "browserify": {
-    "transform": [
-      "browserify-global-shim"
-    ]
-  },
+``//Comment before running tests
+   'react': 'var React',
+   'react/addons': 'var React',
+   'react-redux': 'var ReactRedux',
+   'payment': 'Payment',
+   'lodash': 'lodash',
+   'moment': 'moment',
+   ///////////////////////////////////
 
 ```
