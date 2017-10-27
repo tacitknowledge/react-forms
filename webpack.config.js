@@ -14,18 +14,18 @@ module.exports = {
   },
 
   externals: {
-    //Comment before running tests
-   'react': 'var React',
-   'react/addons': 'var React',
-   'react-redux': 'var ReactRedux',
-   'payment': 'Payment',
-   'lodash': 'lodash',
-   'moment': 'moment',
-   ///////////////////////////////////
-   'cheerio': 'window',
-   'react/addons': true,
-   'react/lib/ExecutionEnvironment': true,
-   'react/lib/ReactContext': true
+    // Comment before running tests
+    'react': 'var React',
+    'react/addons': 'var React',
+    'react-redux': 'var ReactRedux',
+    'payment': 'Payment',
+    'lodash': 'lodash',
+    'date-fns': 'var dateFns',
+   // /////////////////////////////////
+    'cheerio': 'window',
+    'react/addons': true,
+    'react/lib/ExecutionEnvironment': true,
+    'react/lib/ReactContext': true
   },
 
   module: {

@@ -10,7 +10,7 @@ Before running tests, please comment out the following lines from the `webpack.c
    'react-redux': 'var ReactRedux',
    'payment': 'Payment',
    'lodash': 'lodash',
-   'moment': 'moment',
+   'date-fns': 'var dateFns',
    ///////////////////////////////////
 
 ```
