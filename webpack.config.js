@@ -15,10 +15,9 @@ module.exports = {
 
   externals: {
     // Comment before running tests
-    'react': 'var React',
-    'react/addons': 'var React',
-    'react-redux': 'var ReactRedux',
-    'payment': 'Payment',
+    'react': 'react',
+    'react-redux': 'react-redux',
+    'payment': 'payment',
     'lodash': 'lodash',
     'date-fns': 'var dateFns',
    // /////////////////////////////////
